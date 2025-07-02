@@ -11,7 +11,7 @@ import pickle
 import streamlit as st
 
 #load the save model
-Loaded_model=pickle.load(open('L:/ML DEPLOY/best_model.sav','rb'))
+Loaded_model=pickle.load(open('best_model.sav','rb'))
 
 
 
