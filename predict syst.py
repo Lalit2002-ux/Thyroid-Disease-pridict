@@ -9,7 +9,7 @@ import numpy as np
 import pickle
 
 #load the save model
-Loaded_model=pickle.load(open('L:/ML DEPLOY/best_model.sav','rb'))
+Loaded_model=pickle.load(open('best_model.sav','rb'))
 # ✅ New (relative path for Streamlit Cloud)
 
 
