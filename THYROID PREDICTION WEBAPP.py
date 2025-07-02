@@ -33,7 +33,7 @@ def disease_detection(input_data):
 
 # Home Page
 def home():
-    st.title("🏠 Welcome to Thyroid Checker App")
+    st.title("Welcome to Thyroid prediction App")
     st.markdown("## 🔍 What does this app do?")
     st.write("""
         This application helps determine whether a person has a thyroid disorder based on input features.  
@@ -61,14 +61,14 @@ def thyroid_prediction():
 
             if "normal" in diagnose.lower():
                 st.markdown("""
-                    <div style='background-color: #e3f2fd;color:black; padding: 15px; border-radius: 10px; border-left: 5px solid #2196f3;'>
+                    <div style='background-color:#666ef1;color:black; padding: 15px; border-radius: 10px; border-left: 5px solid #2196f3;'>
                    <h4>🟢 Result: Normal</h4>
                   <p>✅ You are not showing signs of thyroid disease based on the input values.</p>
                   <p>🧘 Stay healthy! Keep monitoring your levels regularly.</p>
+                  
                  </div>
 
                 """, unsafe_allow_html=True)
-                st.balloons()
 
                 with st.expander("💡 Tips to Maintain a Healthy Thyroid"):
                     st.write("""
@@ -79,11 +79,31 @@ def thyroid_prediction():
                     """)
             else:
                 st.markdown("""
-                    <div style='background-color: #f8d7da; padding: 15px; border-radius: 10px; border-left: 5px solid red;'>
+                    <div style='background-color:#f14b4b; color:black; padding: 15px; border-radius: 10px; border-left: 5px solid red;'>
                         <h4>🔴 Result: Possible Thyroid Disorder</h4>
                         <p>⚠️ Your values indicate a potential thyroid issue.</p>
                         <p>👩‍⚕️ Please consult an endocrinologist or physician for proper diagnosis.</p>
-                    </div>
+                        <h4>🧠 Interpretation:</h4>
+    <p>Based on the entered values, there is a high likelihood of thyroid dysfunction. This might indicate <strong>hypothyroidism</strong> (underactive thyroid) or <strong>hyperthyroidism</strong> (overactive thyroid), depending on which hormone is imbalanced.</p>
+    <h4>🩺 Recommended Actions:</h4>
+    <ul>
+        <li>📅 Book an appointment with a certified <strong>endocrinologist</strong>.</li>
+        <li>🧪 Request blood tests including: TSH, Free T3, Free T4, Anti-TPO antibodies.</li>
+        <li>🧭 Ask for an ultrasound if nodules or swelling are observed in the thyroid region.</li>
+    </ul>
+    <h4>🥗 Dietary Tips:</h4>
+    <ul>
+        <li>✅ Include iodine-rich foods: seafood, eggs, dairy.</li>
+        <li>🧂 Avoid excessive soy, cruciferous vegetables (like cabbage) if hypothyroid.</li>
+        <li>🚰 Stay well hydrated, maintain balanced meals with selenium and zinc.</li>
+    </ul>
+                        <h4>💊 General Treatment Options:</h4>
+    <ul>
+        <li>🔹 For Hypothyroidism: <em>Levothyroxine (T4 hormone replacement)</em></li>
+        <li>🔹 For Hyperthyroidism: <em>Antithyroid medications, radioactive iodine therapy, or surgery (rare cases)</em></li>
+    </ul>
+    </div>
+                
                 """, unsafe_allow_html=True)
 
                 st.warning("⚠️ Note: This is a machine learning prediction, not a medical diagnosis.")
@@ -123,28 +143,21 @@ def footer():
 def main():
     # Professional Sidebar
     with st.sidebar:
-        st.image("https://cdn-icons-png.flaticon.com/512/3304/3304560.png", width=80)
         st.title("🧭 Navigation")
         
-        page = st.radio("Select a Page", ["🏠 Home", "🩺 Thyroid Prediction"])
+        page = st.radio("Select a Page", ["Home", "Thyroid Prediction"])
 
-        st.markdown("---")
-        st.markdown("### 👨‍💻 About Developer")
-        st.markdown("**Name:** Lalit\n\n**Role:** ML Engineer | Python Dev")
 
-        st.markdown("---")
         st.markdown("### 🌐 Useful Links")
         st.markdown("[📂 GitHub Repo](https://github.com/yourusername)")
-        st.markdown("[📧 Email](mailto:youremail@example.com)")
+        st.markdown("[📧 Email](mailto:lalitsinghs420@gmail.com)")
         st.markdown("[📄 Docs](https://your-docs-link.com)")
 
-        st.markdown("---")
-        st.info("💡 Tip: Use Dark Mode in ⚙️ settings!")
 
     # Route to selected page
-    if page == "🏠 Home":
+    if page == "Home":
         home()
-    elif page == "🩺 Thyroid Prediction":
+    elif page == "Thyroid Prediction":
         thyroid_prediction()
 
     footer()  # Show footer always
