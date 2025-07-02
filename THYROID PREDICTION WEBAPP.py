@@ -18,7 +18,7 @@ st.set_page_config(
 )
 
 # Load the saved model
-Loaded_model = pickle.load(open('L:/ML DEPLOY/best_model.sav', 'rb'))
+Loaded_model = pickle.load(open('best_model.sav', 'rb'))
 
 # Function for prediction
 def disease_detection(input_data):
